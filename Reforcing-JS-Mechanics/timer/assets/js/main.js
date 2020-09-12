@@ -35,7 +35,7 @@ let temp = 1000;
 let timerC;
 
 
-function formatarHora() {
+function formatHour() {
 
     let seconds = second < 10 ? `0${second}` : second;
     let minutes = min < 10 ? `0${min}` : min;
@@ -77,7 +77,7 @@ function stops(){
     hour=0;
     min=0;
     second=0
-    formatarHora()
+    formatHour()
     timerP.classList.remove('started')
     timerP.classList.remove('stopped')
    
@@ -95,7 +95,7 @@ function timer() {
         min = 0;
         hour++;
     }
-    formatarHora()
+    formatHour()
 }
 
 
