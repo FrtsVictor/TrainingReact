@@ -61,6 +61,8 @@ form button:hover {
 button{
   margin: 3px;
   padding: 8px 15px;
+  border-radius: 5px;
+  border: 1px solid;
 }
 h1 {
   text-align: center;
@@ -79,6 +81,7 @@ h3{
   justify-content: center;  
   width: auto;
   padding: 10px;
+  font-size: smaller;
 }
 
 .started{
@@ -89,15 +92,29 @@ h3{
   color: rgb(245, 90, 90);
 }
 
+.start{
+  background-color: rgb(187, 226, 147);
+}
+
+.stop{
+  background-color: rgb(245, 90, 90)
+}
+
+.clear{
+background-color: rgb(227, 231, 222); ;
+}
 
 .start:hover{
+  cursor: pointer;
   background-color: rgb(187, 226, 147);
 }
 
 .stop:hover{
-  background-color: rgb(209, 132, 132);
+  cursor: pointer;
+  background-color: rgb(194, 14, 14);
 }
 
 .clear:hover{
+  cursor: pointer;
   background-color: rgb(212, 209, 209);
 }

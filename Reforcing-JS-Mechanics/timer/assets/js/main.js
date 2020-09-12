@@ -22,7 +22,7 @@ container.appendChild(divButtons);
 function createButton(name, funcao) {
     let newButton = document.createElement('button');
     newButton.className = name;
-    newButton.textContent = name;
+    newButton.textContent = name.replace(name[0], name[0].toUpperCase());
     newButton.onclick = funcao
     divButtons.appendChild(newButton)
 }
@@ -33,6 +33,7 @@ let min = 0;
 let second = 0;
 let temp = 1000;
 let timerC;
+let on = false;
 
 
 function formatHour() {
@@ -51,24 +52,21 @@ function pause() {
     clearInterval(timerC)
     timerP.classList.remove('started')
     timerP.className = 'stopped'
-    ligado = false
+    on = false
 }
 
 
-let ligado = false;
 
 function start() {
-    
     timerP.classList.remove('stop')
     timerP.className = 'started'
 
-    if(!ligado){
+    if(!on){
         timerC = setInterval(() => {
-            ligado = true
+            on = true
             timer();
         }, temp);
         }
-
 }
 
 
@@ -80,7 +78,6 @@ function stops(){
     formatHour()
     timerP.classList.remove('started')
     timerP.classList.remove('stopped')
-   
 }
 
 function timer() {
@@ -95,7 +92,7 @@ function timer() {
         min = 0;
         hour++;
     }
-    formatHour()
+   return formatHour()
 }
 
 
