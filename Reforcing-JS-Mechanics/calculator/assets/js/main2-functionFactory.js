@@ -9,9 +9,16 @@ function createCalculator(){
         },
 
         calculate(){
-            let result = eval(this.display.value) 
-            this.display.value = result;
-        },
+            try {
+                let result = eval(this.display.value);
+                if(!result){
+                    return alert('Invalid Operation NaN')
+                }
+                this.display.value = result;
+            } catch (e) {
+                return alert('Invalid Operation');
+            }
+        } ,
 
         clearDisplay(){
             this.display.value= '';
