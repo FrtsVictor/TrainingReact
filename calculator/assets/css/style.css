@@ -24,6 +24,9 @@ body {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 form input, form label, form button {

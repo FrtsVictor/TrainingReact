@@ -9,8 +9,8 @@ function createCalculator(){
         },
 
         calculate(){
-            let calc = eval(this.display.value) 
-            this.display.value = calc;
+            let result = eval(this.display.value) 
+            this.display.value = result;
         },
 
         clearDisplay(){
@@ -28,6 +28,7 @@ function createCalculator(){
                 }
             })
         },
+
         clickButton(){
             //this -> calc
             document.addEventListener('click', e =>{
@@ -60,6 +61,5 @@ function createCalculator(){
     }
 }
 
-const calc = createCalculator()
-
-calc.start()
+const calculator = createCalculator()
+calculator.start()
