@@ -1,0 +1,36 @@
+{
+  "tarefas": [
+    {
+      "descricao": "Aprender react native",
+      "concluido": false,
+      "id": 2
+    },
+    {
+      "descricao": "JSON",
+      "concluido": false,
+      "id": 3
+    },
+    {
+      "descricao": "Axios",
+      "concluido": false,
+      "id": 4
+    },
+    {
+      "descricao": "Aprender Mechanics",
+      "concluido": false,
+      "id": 5
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "diego@domob.me",
+      "password": "123123"
+    }
+  ],
+  "admin": [
+    {
+      "nome": "ASdasd"
+    }
+  ]
+}
