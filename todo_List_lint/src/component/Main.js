@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import Form from './Form'
 import Tasks from './Tasks'
 
+import StyledForm from './Form/Form'
+import StyledList from './Tasks/Tasks'
+
 import './Main.css'
 
 export default class Main extends Component {
@@ -91,17 +94,21 @@ export default class Main extends Component {
       <div className="main">
         <h1>Task List</h1>
 
-        <Form
-        handleInputChange={this.handleInputChange}
-        handleSubmit={this.handleSubmit}
-        newTask={newTask}
-        ></Form>
+        <StyledForm>
+            <Form
+                handleInputChange={this.handleInputChange}
+                handleSubmit={this.handleSubmit}
+                newTask={newTask}
+            ></Form>
+        </StyledForm>
 
-        <Tasks
-        handleDelete={this.handleDelete}
-        handleEdit={this.handleEdit}
-        tasks={tasks}
-        ></Tasks>
+        <StyledList>
+            <Tasks
+                handleDelete={this.handleDelete}
+                handleEdit={this.handleEdit}
+                tasks={tasks}
+            ></Tasks>
+        </StyledList>
 
       </div>
     );

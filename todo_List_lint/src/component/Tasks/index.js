@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaEdit, FaWindowClose } from 'react-icons/fa';
 import PropTypes from 'prop-types';
-import './Tasks.css';
 
 export default function Tasks({ tasks, handleDelete, handleEdit }) {
   return (

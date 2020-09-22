@@ -1,3 +1,7 @@
+import styled from 'styled-components';
+
+const StyledTaskList = styled.div`
+
 .tasks{
     margin-top: 30px;
 }
@@ -38,3 +42,5 @@ tasks li span {
     display: flex;
     align-items: center;
 }
+`;
+export default StyledTaskList;

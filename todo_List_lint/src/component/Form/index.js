@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaPlus } from 'react-icons/fa';
 import PropTypes from 'prop-types';
-import './Form.css';
 
 export default function Form({ handleSubmit, handleInputChange, newTask }) {
   return (

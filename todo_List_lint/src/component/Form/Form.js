@@ -1,3 +1,7 @@
+import styled from 'styled-components';
+
+const StyledForm = styled.form`
+
 .form{
     margin-top: 30px;
     display: flex;
@@ -23,3 +27,5 @@ form button[type="submit"]{
     align-items: center;
     justify-content: center;
 }
+`;
+export default StyledForm;
