@@ -9,11 +9,12 @@ export default createGlobalStyle`
 }
 
 body {
-    background: #f0f0f5;
+    background: #A593E0;
 }
 
 html, body, #root {
     height: 100%;
+    margin: 0 auto;
 }
 
 body, input, button {
