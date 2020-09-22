@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-//Form
-import { FaPlus } from 'react-icons/fa'
-//Tasks
-import { FaEdit, FaWindowClose } from 'react-icons/fa'
 
+import Form from './Form'
+import Tasks from './Tasks'
 
 import './Main.css'
 
@@ -21,20 +19,16 @@ export default class Main extends Component {
 
     componentDidMount(){
         const tasks = JSON.parse(localStorage.getItem('tasks'));
-
         if(!tasks) return;
 
         this.setState( {tasks})
-
     }
 
     componentDidUpdate(prevProps, prevState){
         const { tasks } = this.state;
-
         if(tasks === prevState.tasks) return;
 
         localStorage.setItem('tasks', JSON.stringify(tasks));
-
     }
 
     handleInputChange = (e) => {
@@ -68,17 +62,11 @@ export default class Main extends Component {
           index: -1,
           newTask: ''
         })
-
     }
-
-
-
   }
 
   handleEdit = (e, index) =>{
     const { tasks } = this.state;
-
-
     this.setState({
         index: index,
         newTask: tasks[index]
@@ -103,31 +91,18 @@ export default class Main extends Component {
       <div className="main">
         <h1>Task List</h1>
 
-        <form onSubmit={this.handleSubmit} action="#" className="form">
-          <input
-            type="text"
-            onChange={this.handleInputChange}
-            value={newTask}
-          />
-          <button type="submit">
-          <FaPlus />
-          </button>
-        </form>
+        <Form
+        handleInputChange={this.handleInputChange}
+        handleSubmit={this.handleSubmit}
+        newTask={newTask}
+        ></Form>
 
-        <ul className="tasks">
-            { tasks.map( (task, index) => (
-            <li key={index}> {task}
-                <span>
-                    <FaEdit
-                    onClick={(e) => this.handleEdit( e, index)}
-                    className="edit"/>
-                    <FaWindowClose
-                     onClick={(e) => this.handleDelete(e, index)}
-                     className="delete"/>
-                </span>
-             </li>
-            ))}
-        </ul>
+        <Tasks
+        handleDelete={this.handleDelete}
+        handleEdit={this.handleEdit}
+        tasks={tasks}
+        ></Tasks>
+
       </div>
     );
   }
