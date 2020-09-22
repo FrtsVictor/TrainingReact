@@ -27,6 +27,22 @@ export default class Main extends Component {
     });
   }
 
+  handleSubmit = (e) =>{
+      e.preventDefault();
+      let { tasks } = this.state;
+      let { newTask } = this.state;
+      newTask = newTask.trim();
+
+      if(tasks.indexOf(newTask) !== -1 ) return;
+
+      const newTasks = [...tasks];
+
+      this.setState({
+          tasks: [...newTasks, newTask]
+      })
+
+  }
+
   render() {
     const { newTask, tasks } = this.state;
 
@@ -34,7 +50,7 @@ export default class Main extends Component {
       <div className="main">
         <h1>Task List</h1>
 
-        <form action="#" className="form">
+        <form onSubmit={this.handleSubmit} action="#" className="form">
           <input
             type="text"
             onChange={this.handleInputChange}
@@ -48,10 +64,10 @@ export default class Main extends Component {
         <ul className="tasks">
             { tasks.map( task => (
             <li key={task}> {task}
-                <div>
+                <span>
                     <FaEdit className="edit"/>
                     <FaWindowClose className="delete"/>
-                </div>
+                </span>
              </li>
             ))}
         </ul>

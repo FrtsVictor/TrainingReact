@@ -73,3 +73,8 @@ form button[type="submit"]{
     cursor:pointer;
     transition: all 600ms;
 }
+
+tasks li span {
+    display: flex;
+    align-items: center;
+}
